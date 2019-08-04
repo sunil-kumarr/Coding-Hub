@@ -1,0 +1,7 @@
+Which Sorting Algorithms are In-Place and which are not?
+In Place : Bubble sort, Selection Sort, Insertion Sort, Heapsort.
+
+Not In-Place : Merge Sort. Note that merge sort requires O(n) extra space.
+
+What about QuickSort? Why is it called In-Place?
+QuickSort uses extra space for recursive function calls. It is called in-place according to broad definition as extra space required is not used to manipulate input, but only for recursive calls.
