@@ -76,8 +76,10 @@ void bfs(TreeNode *root, vector<vector<int> > &v){
         q.pop();
         if(root->left)  q.push({root->left , current.level+1});
         if(root->right) q.push({root->right, current.level+1});
+        // put node data of same level in vector
         if(current.level == level)
           vec.push_back(root->data);
+        // this only gets executed when you move to next level and level var is behind
         else {
             // reverse for odd level 1,3,5 (right to left);
             if(level&1){
@@ -86,8 +88,11 @@ void bfs(TreeNode *root, vector<vector<int> > &v){
             }
             else v.push_back(vec);
             vec.clear();
-
+            // put the current node in level vector as level is empty
             vec.push_back(root->data);
+            // now inc level var and now the if part will get executed for untill all nodes of same level are not in vector
+            // the else part will get exe when you move to next level. and the previous level is complete.
+            // now put that in v.
             level++;
         }
     }
